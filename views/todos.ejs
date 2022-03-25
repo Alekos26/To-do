@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('includes/head') %>
+    <script src="/scripts/logic.js" defer></script>
+  </head>
+  <body>
+    <header class="card" id="header">
+      <%- include('includes/header') %>
+    </header>
+    <main>
+      <section>
+        <div id="h1" >
+          <h1 id="todo">To do</h1>
+        </div>
+      </section>
+
+      <section>
+        <form action="/todos/post" method="POST" id="form1" class="card add">
+          <div class="cb-container">
+            <button id="add-btn">+</button>
+          </div>
+          <div class="txt-container">
+            <label for="addt">Create todo</label>
+            <input
+              type="text"
+              name="text"
+              class="txt-input"
+              placeholder="Create a new todo..."
+              id="addt"
+            />
+          </div>
+        </form>
+      </section>
+
+      <section>
+        <div id="activeTodos">
+          <ul class="todos">
+            <% for (const activeTodo of activeTodos) { %>
+              <div id="id" class="card txt-input">
+                <form action="/todos/<%= activeTodo._id %>/done" method="POST">
+                  <button type="submit" class="btn-close-white" aria-label="Close"><img src="/assets/icons8-tick-24.png"></button>
+                </form>
+                <li id="txt" >
+                  <%= activeTodo.text %>
+                </li>
+                <form action="/todos/<%= activeTodo._id %>/delete" method="POST">
+                  <button type="submit" class="btn-close-white" aria-label="Close"><img src="/assets/icons8-delete-32.png"> </button>
+                </form>
+              </div>
+            <% } %>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div id="completedTodos">
+          <ul class="todos">
+            <% for (const completeTodo of completeTodos) { %>
+              <div id="id" class="card txt-input">
+                <form action="/todos/<%= completeTodo._id %>/done" method="POST">
+                  <button type="submit" class="btn-close-white" aria-label="Close"><img id="imge" src="/assets/icons8-tick-25.png"></button>
+                </form>
+                <li id="txt" >
+                  <%= completeTodo.text %>
+                </li>
+                <form action="/todos/<%= completeTodo._id %>/delete" method="POST">
+                  <button type="submit" class="btn-close-white" aria-label="Close"><img src="/assets/icons8-delete-32.png"> </button>
+                </form>
+              </div>
+            <% } %>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="card stat">
+          <div class="filter">
+            <button id="active">Active</button>
+            <button id="completed">Completed</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </body>
+</html>
