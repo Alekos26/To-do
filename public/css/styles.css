@@ -55,6 +55,11 @@
 
 #txt {
   color: white;
+
+}
+
+#txt-completed {
+  color: green;
 }
 
 #div1 {

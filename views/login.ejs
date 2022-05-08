@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('includes/head') %>
-  </head>
-  <body>
-    <header class="card" id="header">
-      <%- include('includes/header') %>
-    </header>
-    <main>
-      <section>
-        <div id="h1" >
-          <h1 id="todo">To do</h1>
-        </div>
+    <head>
+        <%- include('includes/head') %>
+    </head>
+    <body>
+        <header class="card" id="header">
+            <%- include('includes/header') %>
+        </header>
+        <main>
+            <section>
+                <div id="h1">
+                    <h1 id="todo">To do</h1>
+                </div>
             </section>
 
-      <section>
-        <form id="form" method="POST" action="/users/login">
-          <div id="email" class="form-group card add ">
-              <label for="exampleInputEmail1">Username</label>
-              <input name="name" type="text" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
-            </div>  
-          <div id="password" class="form-group card add ">
-            <label for="exampleInputPassword1">Password</label>
-            <input name="password" type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
-          </div>
-          <button id="submit-btn" type="submit" class="btn btn-primary card add ">Login</button>
-        </form>
-      </section>
-    </main>
-  </body>
+            <section>
+                <form id="form" method="POST" action="/users/login">
+                    <div id="email" class="form-group card add">
+                        <label for="exampleInputEmail1">Username</label>
+                        <input
+                            name="name"
+                            type="text"
+                            class="form-control form-control-lg"
+                            id="exampleInputEmail1"
+                            aria-describedby="emailHelp"
+                            placeholder="Enter username"
+                            autocomplete="off"
+                        />
+                    </div>
+                    <div id="password" class="form-group card add">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input
+                            name="password"
+                            type="password"
+                            class="form-control form-control-lg"
+                            id="exampleInputPassword1"
+                            placeholder="Password"
+                            autocomplete="off"
+                        />
+                    </div>
+                    <button
+                        id="submit-btn"
+                        type="submit"
+                        class="btn btn-primary card add"
+                    >
+                        Login
+                    </button>
+                </form>
+            </section>
+        </main>
+    </body>
 </html>

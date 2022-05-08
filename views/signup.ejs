@@ -1,36 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('includes/head') %>
-  </head>
-  <body>
-    <header class="card" id="header">
-      <%- include('includes/header') %>
-    </header>
-    <main>
-      <section>
-        <div id="h1" >
-          <h1 id="todo">To do</h1>
-        </div>
+    <head>
+        <%- include('includes/head') %>
+    </head>
+    <body>
+        <header class="card" id="header">
+            <%- include('includes/header') %>
+        </header>
+        <main>
+            <section>
+                <div id="h1">
+                    <h1 id="todo">To do</h1>
+                </div>
             </section>
 
-      <section>
-        <form id="form" class="txt-input" method="POST" action="/users/signup">
-          <div id="email" class="form-group card add txt-container">
-              <label for="exampleInputEmail1">User name</label>
-              <input name="name" type="text" class="form-control form-control-lg txt-input" id="signUpForm" aria-describedby="emailHelp" placeholder="Enter username">
-            </div>  
-          <div id="email" class="form-group card add ">
-            <label for="exampleInputEmail1">Email address</label>
-            <input name="email" type="email" class="form-control form-control-lg" id="signUpForm" aria-describedby="emailHelp" placeholder="Enter email">
-          </div>
-          <div id="password" class="form-group card add ">
-            <label for="exampleInputPassword1">Password</label>
-            <input name="password" type="password" class="form-control form-control-lg" id="signUpForm" placeholder="Password">
-          </div>
-          <button id="submit-btn" type="submit" class="btn btn-primary card add ">Submit</button>
-        </form>
-      </section>
-    </main>
-  </body>
+            <section>
+                <form
+                    id="form"
+                    class="txt-input"
+                    method="POST"
+                    action="/users/signup"
+                >
+                    <div id="email" class="form-group card add txt-container">
+                        <label for="exampleInputEmail1">User name</label>
+                        <input
+                            name="name"
+                            type="text"
+                            class="form-control form-control-lg txt-input"
+                            id="signUpForm"
+                            aria-describedby="emailHelp"
+                            placeholder="Enter username"
+                            autocomplete="off"
+                        />
+                    </div>
+                    <div id="email" class="form-group card add">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input
+                            name="email"
+                            type="email"
+                            class="form-control form-control-lg"
+                            id="signUpForm"
+                            aria-describedby="emailHelp"
+                            placeholder="Enter email"
+                            autocomplete="off"
+                        />
+                    </div>
+                    <div id="password" class="form-group card add">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input
+                            name="password"
+                            type="password"
+                            class="form-control form-control-lg"
+                            id="signUpForm"
+                            placeholder="Password"
+                            autocomplete="off"
+                        />
+                    </div>
+                    <button
+                        id="submit-btn"
+                        type="submit"
+                        class="btn btn-primary card add"
+                    >
+                        Submit
+                    </button>
+                </form>
+            </section>
+        </main>
+    </body>
 </html>

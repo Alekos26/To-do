@@ -28,6 +28,8 @@
               class="txt-input"
               placeholder="Create a new todo..."
               id="addt"
+              autocomplete="off"
+              required
             />
           </div>
         </form>
@@ -61,7 +63,7 @@
                 <form action="/todos/<%= completeTodo._id %>/done" method="POST">
                   <button type="submit" class="btn-close-white" aria-label="Close"><img id="imge" src="/assets/icons8-tick-25.png"></button>
                 </form>
-                <li id="txt" >
+                <li id="txt-completed" >
                   <%= completeTodo.text %>
                 </li>
                 <form action="/todos/<%= completeTodo._id %>/delete" method="POST">

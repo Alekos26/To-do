@@ -49,9 +49,11 @@ const loginUser = asyncHandler(async (req, res) => {
     const { name, password } = req.body;
 
     const user = await User.findOne({ name });
-    const userId = user._id
-
-    if (name && (await bcrypt.compare(password, user.password))) {
+    
+    if (!user) {
+        res.status(400).render('error400b')
+    }else if (name && (await bcrypt.compare(password, user.password))) {
+        const userId = user._id
         const token = generateToken(userId);
        return res.status(201).cookie('jwt', token, {httpOnly: true}).redirect('/todos/get')
     } else {
